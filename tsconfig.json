@@ -1,0 +1,13 @@
+{
+  "include": ["src/**/*.ts"],
+  "exclude": ["node_modules", "src/tests/"],
+  "compilerOptions": {
+    "baseUrl": "./src/main.ts",
+    "noImplicitAny": true,
+    "moduleResolution": "node",
+    "module": "commonjs",
+    "lib": ["es2015"],
+    "outDir": "dist",
+    "rootDir": "src"
+  }
+}
