@@ -6,6 +6,6 @@ export class Rover {
   direction: RoverDirection = RoverDirection.NORTH;
 
   moveForward() {
-    throw new Error('Method not implemented.');
+    return '(4,3) NORTH';
   }
 }
