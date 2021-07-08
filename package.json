@@ -7,7 +7,7 @@
     "start": "tsc -p . && node dist/main.js",
     "dev": "NODE_ENV=dev nodemon src/main.ts",
     "test": "NODE_ENV=test mocha -r ts-node/register  \"src/tests/**/*.spec.ts\"",
-    "test-watch": "NODE_ENV=test mocha -r ts-node/register  \"src/tests/**/*.spec.ts\"  --watch --watch-files \"src/tests/**/*.spec.ts\""
+    "test-watch": "NODE_ENV=test mocha -r ts-node/register  \"src/tests/**/*.spec.ts\"  --watch --watch-files \"src\""
   },
   "keywords": [
     "tdd",
