@@ -1,3 +1,3 @@
-import { Webserver } from "./webserver/webserver";
+import { Webserver } from './webserver/webserver';
 
 const webserver = new Webserver();
