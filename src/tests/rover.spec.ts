@@ -17,10 +17,16 @@ describe('Rover with initial position is (4, 2) NORTH', () => {
   });
 
   describe('Rover can excute commands', () => {
-    it('Should move forward four times with commands FFFF', () => {
-      rover.excuteCommands('FFFF');
-      const currentPosition = rover.position.getRoverPosition();
-      expect(currentPosition).to.equal(`(4,6) ${RoverDirection.NORTH}`);
+    describe('North Heading', () => {
+      it('Should move forward four times with commands FFFF', () => {
+        rover.excuteCommands('FFFF');
+        expect(rover.position.getRoverPosition()).to.equal(`(4,6) ${RoverDirection.NORTH}`);
+      });
+
+      it('Should move backward four times with commands BBBB', () => {
+        rover.excuteCommands('BBBB');
+        expect(rover.position.getRoverPosition()).to.equal(`(4,-2) ${RoverDirection.NORTH}`);
+      });
     });
   });
 });
