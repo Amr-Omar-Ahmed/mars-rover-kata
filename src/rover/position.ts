@@ -16,12 +16,16 @@ export const HEADING_AVAILABLE_COMMANDS: { [key: string]: Commands } = {
     B: (position: Position) => {
       position.y--;
     },
+    R: (position: Position) => {
+      position.heading = RoverHeadings.EAST;
+    },
   },
 };
 
 export interface Commands {
   F: (position: Position) => void;
   B: (position: Position) => void;
+  R: (position: Position) => void;
 }
 
 export enum RoverHeadings {
