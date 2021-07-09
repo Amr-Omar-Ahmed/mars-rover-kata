@@ -13,25 +13,25 @@ describe('Rover with initial position is (4, 2) NORTH', () => {
     it('When rover heading is at North, y coordinate should be increment with one', () => {
       rover.direction = RoverDirection.NORTH;
       const currentPosition = rover.moveForward();
-      expect(currentPosition).to.equal(rover.getRoverPosition());
+      expect(currentPosition).to.equal('(4,3) NORTH');
     });
 
     it('When rover heading is at East, x coordinate should be increment with one', () => {
       rover.direction = RoverDirection.EAST;
       const currentPosition = rover.moveForward();
-      expect(currentPosition).to.equal(rover.getRoverPosition());
+      expect(currentPosition).to.equal('(5,2) EAST');
     });
 
     it('When rover heading is at South, y coordinate should be decrement by one', () => {
       rover.direction = RoverDirection.SOUTH;
       const currentPosition = rover.moveForward();
-      expect(currentPosition).to.equal(rover.getRoverPosition());
+      expect(currentPosition).to.equal('(4,1) SOUTH');
     });
 
     it('When rover heading is at Weast, x coordinate should be decrement by one', () => {
       rover.direction = RoverDirection.WEAST;
       const currentPosition = rover.moveForward();
-      expect(currentPosition).to.equal(rover.getRoverPosition());
+      expect(currentPosition).to.equal('(3,2) WEAST');
     });
   });
 
