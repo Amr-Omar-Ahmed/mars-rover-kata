@@ -1,3 +1,9 @@
+export enum RoverHeadings {
+  'NORTH' = 'NORTH',
+  'EAST' = 'EAST',
+  'SOUTH' = 'SOUTH',
+  'WEAST' = 'WEAST',
+}
 export class Position {
   x = 4;
   y = 2;
@@ -9,7 +15,7 @@ export class Position {
 }
 
 export const HEADING_AVAILABLE_COMMANDS: { [key: string]: Commands } = {
-  NORTH: {
+  [RoverHeadings.NORTH]: {
     F: (position: Position) => {
       position.y++;
     },
@@ -23,6 +29,20 @@ export const HEADING_AVAILABLE_COMMANDS: { [key: string]: Commands } = {
       position.heading = RoverHeadings.WEAST;
     },
   },
+  [RoverHeadings.EAST]: {
+    F: (position: Position) => {
+      position.x++;
+    },
+    B: (position: Position) => {
+      position.x--;
+    },
+    R: (position: Position) => {
+      position.heading = RoverHeadings.SOUTH;
+    },
+    L: (position: Position) => {
+      position.heading = RoverHeadings.NORTH;
+    },
+  },
 };
 
 export interface Commands {
@@ -30,11 +50,4 @@ export interface Commands {
   B: (position: Position) => void;
   R: (position: Position) => void;
   L: (position: Position) => void;
-}
-
-export enum RoverHeadings {
-  'NORTH' = 'NORTH',
-  'EAST' = 'EAST',
-  'SOUTH' = 'SOUTH',
-  'WEAST' = 'WEAST',
 }
