@@ -6,20 +6,22 @@ export class Rover {
 
   excuteCommands(commands: string): string {
     let isRoverCanBeDamaged = false;
+
     commands.split('').forEach((command: 'F' | 'R' | 'L' | 'B') => {
       if (isRoverCanBeDamaged) {
         return;
       }
-      const prevX = this.space.position.x;
-      const prevY = this.space.position.y;
-      const currentHeading = this.space.position.heading;
-      HEADING_AVAILABLE_COMMANDS[currentHeading][command](this.space.position);
+      const position = this.space.position;
+      const prevX = position.x;
+      const prevY = position.y;
+      const currentHeading = position.heading;
+      HEADING_AVAILABLE_COMMANDS[currentHeading][command](position);
       isRoverCanBeDamaged = this.space.obstacles.some(
-        (obs) => obs.x === this.space.position.x && obs.y === this.space.position.y
+        (obs) => obs.x === position.x && obs.y === position.y
       );
       if (isRoverCanBeDamaged) {
-        this.space.position.x = prevX;
-        this.space.position.y = prevY;
+        position.x = prevX;
+        position.y = prevY;
       }
     });
     return `${this.space.position.getRoverPosition()}${isRoverCanBeDamaged ? ' STOPPED' : ''}`;
