@@ -41,4 +41,12 @@ describe('Rover with initial position is (4, 2) NORTH', () => {
       expect(position).to.equal(initialPosition);
     });
   });
+
+  describe('Rover can excute commands', () => {
+    it('Should move forward four times with commands FFFF', () => {
+      rover.excuteCommands('FFFF');
+      const currentPosition = rover.getRoverPosition();
+      expect(currentPosition).to.equal('(4,6) NORTH');
+    });
+  });
 });
