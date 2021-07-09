@@ -5,7 +5,7 @@ export class Rover {
 
   excuteCommands(commands: string) {
     commands.split('').forEach((command: 'F') => {
-      const currentHeading = this.position.direction;
+      const currentHeading = this.position.heading;
       HEADING_AVAILABLE_COMMANDS[currentHeading][command](this.position);
     });
   }
