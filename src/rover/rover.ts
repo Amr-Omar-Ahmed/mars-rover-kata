@@ -1,4 +1,4 @@
-import { HEADING_AVAILABLE_COMMANDS, Position } from './position';
+import { HEADING_AVAILABLE_COMMANDS } from './position';
 import { Space } from './space';
 
 export class Rover {

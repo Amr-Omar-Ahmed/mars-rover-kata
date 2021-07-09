@@ -116,7 +116,11 @@ describe('Rover with initial position is (4, 2) NORTH', () => {
 
   describe('When the rover enter a coordinate with an obstacle', () => {
     it('Rover should be stopped if report previous position', () => {
-      rover.space.obstacles = [{ x: 4, y: 4 }];
+      rover.space.obstacles = [
+        { x: 4, y: 4 },
+        { x: 10, y: 5 },
+        { x: 4, y: 1 },
+      ];
       expect(rover.excuteCommands('FFFF')).to.equal(`(4,3) ${RoverHeadings.NORTH} STOPPED`);
     });
   });
