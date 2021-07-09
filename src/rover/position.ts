@@ -43,6 +43,20 @@ export const HEADING_AVAILABLE_COMMANDS: { [key: string]: Commands } = {
       position.heading = RoverHeadings.NORTH;
     },
   },
+  [RoverHeadings.SOUTH]: {
+    F: (position: Position) => {
+      position.y--;
+    },
+    B: (position: Position) => {
+      position.y++;
+    },
+    R: (position: Position) => {
+      position.heading = RoverHeadings.WEAST;
+    },
+    L: (position: Position) => {
+      position.heading = RoverHeadings.EAST;
+    },
+  },
 };
 
 export interface Commands {
