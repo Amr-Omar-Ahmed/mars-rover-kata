@@ -1,0 +1,7 @@
+version: '3.7'
+
+services:
+  mars-rover-kata:
+    build:
+      target: test
+    command: npm run test
