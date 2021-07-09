@@ -1,33 +1,12 @@
-import { Coordinates } from './coordinates';
-import { RoverDirection } from './directions';
+import { HEADING_AVAILABLE_COMMANDS, Position } from './position';
 
 export class Rover {
-  coordinates: Coordinates = new Coordinates(4, 2);
-  direction: RoverDirection = RoverDirection.NORTH;
-
-  moveForward() {
-    if (this.direction === RoverDirection.NORTH) {
-      this.coordinates.y = this.coordinates.y + 1;
-      return this.getRoverPosition();
-    } else if (this.direction === RoverDirection.EAST) {
-      this.coordinates.x = this.coordinates.x + 1;
-      return this.getRoverPosition();
-    } else if (this.direction === RoverDirection.SOUTH) {
-      this.coordinates.y = this.coordinates.y - 1;
-      return this.getRoverPosition();
-    } else if (this.direction === RoverDirection.WEAST) {
-      this.coordinates.x = this.coordinates.x - 1;
-      return this.getRoverPosition();
-    }
-  }
+  position: Position = new Position();
 
   excuteCommands(commands: string) {
-    commands.split('').forEach((command) => {
-      this.moveForward();
+    commands.split('').forEach((command: 'F') => {
+      const currentHeading = this.position.direction;
+      HEADING_AVAILABLE_COMMANDS[currentHeading][command](this.position);
     });
-  }
-
-  getRoverPosition(): string {
-    return `(${this.coordinates.x},${this.coordinates.y}) ${this.direction}`;
   }
 }
