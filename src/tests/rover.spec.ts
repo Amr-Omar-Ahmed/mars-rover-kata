@@ -95,5 +95,31 @@ describe('Rover with initial position is (4, 2) NORTH', () => {
         expect(rover.position.getRoverPosition()).to.equal(`(4,2) ${RoverHeadings.EAST}`);
       });
     });
+
+    describe('WEAST Heading', () => {
+      beforeEach(() => {
+        rover.position.heading = RoverHeadings.WEAST;
+      });
+
+      it('Should move forward four times with commands FFFF', () => {
+        rover.excuteCommands('FFFF');
+        expect(rover.position.getRoverPosition()).to.equal(`(0,2) ${RoverHeadings.WEAST}`);
+      });
+
+      it('Should move backward four times with commands BBBB', () => {
+        rover.excuteCommands('BBBB');
+        expect(rover.position.getRoverPosition()).to.equal(`(8,2) ${RoverHeadings.WEAST}`);
+      });
+
+      it('Should rotate right, and heading becomes at NORTH', () => {
+        rover.excuteCommands('R');
+        expect(rover.position.getRoverPosition()).to.equal(`(4,2) ${RoverHeadings.NORTH}`);
+      });
+
+      it('Should rotate left, and heading becomes at SOUTH', () => {
+        rover.excuteCommands('L');
+        expect(rover.position.getRoverPosition()).to.equal(`(4,2) ${RoverHeadings.SOUTH}`);
+      });
+    });
   });
 });
