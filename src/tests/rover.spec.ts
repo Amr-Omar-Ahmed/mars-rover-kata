@@ -32,6 +32,11 @@ describe('Rover with initial position is (4, 2) NORTH', () => {
         rover.excuteCommands('R');
         expect(rover.position.getRoverPosition()).to.equal(`(4,2) ${RoverHeadings.EAST}`);
       });
+
+      it('Should rotate left, and heading becomes at WEAST', () => {
+        rover.excuteCommands('L');
+        expect(rover.position.getRoverPosition()).to.equal(`(4,2) ${RoverHeadings.WEAST}`);
+      });
     });
   });
 });
