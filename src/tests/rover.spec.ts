@@ -48,5 +48,11 @@ describe('Rover with initial position is (4, 2) NORTH', () => {
       const currentPosition = rover.getRoverPosition();
       expect(currentPosition).to.equal('(4,6) NORTH');
     });
+
+    it('Should move backward four times with commands BBBB', () => {
+      rover.excuteCommands('BBBB');
+      const currentPosition = rover.getRoverPosition();
+      expect(currentPosition).to.equal('(4,-2) NORTH');
+    });
   });
 });
