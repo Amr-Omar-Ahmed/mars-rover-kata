@@ -8,16 +8,16 @@ export class Rover {
   moveForward() {
     if (this.direction === RoverDirection.NORTH) {
       this.coordinates.y = this.coordinates.y + 1;
-      return '(4,3) NORTH';
+      return this.getRoverPosition();
     } else if (this.direction === RoverDirection.EAST) {
       this.coordinates.x = this.coordinates.x + 1;
-      return '(5,2) EAST';
+      return this.getRoverPosition();
     } else if (this.direction === RoverDirection.SOUTH) {
       this.coordinates.y = this.coordinates.y - 1;
-      return '(4,1) SOUTH';
+      return this.getRoverPosition();
     } else if (this.direction === RoverDirection.WEAST) {
       this.coordinates.x = this.coordinates.x - 1;
-      return '(3,2) WEAST';
+      return this.getRoverPosition();
     }
   }
 
