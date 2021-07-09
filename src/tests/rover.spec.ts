@@ -20,28 +20,23 @@ describe('Rover with initial position is (4, 2) NORTH', () => {
   describe('Rover can excute commands', () => {
     describe('North Heading', () => {
       it('Should move forward four times with commands FFFF', () => {
-        rover.excuteCommands('FFFF');
-        expect(position.getRoverPosition()).to.equal(`(4,6) ${RoverHeadings.NORTH}`);
+        expect(rover.excuteCommands('FFFF')).to.equal(`(4,6) ${RoverHeadings.NORTH}`);
       });
 
       it('Should move backward four times with commands BBBB', () => {
-        rover.excuteCommands('BBBB');
-        expect(position.getRoverPosition()).to.equal(`(4,-2) ${RoverHeadings.NORTH}`);
+        expect(rover.excuteCommands('BBBB')).to.equal(`(4,-2) ${RoverHeadings.NORTH}`);
       });
 
       it('Should rotate right, and heading becomes at EAST', () => {
-        rover.excuteCommands('R');
-        expect(position.getRoverPosition()).to.equal(`(4,2) ${RoverHeadings.EAST}`);
+        expect(rover.excuteCommands('R')).to.equal(`(4,2) ${RoverHeadings.EAST}`);
       });
 
       it('Should rotate left, and heading becomes at WEAST', () => {
-        rover.excuteCommands('L');
-        expect(position.getRoverPosition()).to.equal(`(4,2) ${RoverHeadings.WEAST}`);
+        expect(rover.excuteCommands('L')).to.equal(`(4,2) ${RoverHeadings.WEAST}`);
       });
 
       it('Should execute multiple commands', () => {
-        rover.excuteCommands('FFFFBBBBR');
-        expect(position.getRoverPosition()).to.equal(`(4,2) ${RoverHeadings.EAST}`);
+        expect(rover.excuteCommands('FFFFBBBBR')).to.equal(`(4,2) ${RoverHeadings.EAST}`);
       });
     });
 
@@ -51,23 +46,19 @@ describe('Rover with initial position is (4, 2) NORTH', () => {
       });
 
       it('Should move forward four times with commands FFFF', () => {
-        rover.excuteCommands('FFFF');
-        expect(position.getRoverPosition()).to.equal(`(8,2) ${RoverHeadings.EAST}`);
+        expect(rover.excuteCommands('FFFF')).to.equal(`(8,2) ${RoverHeadings.EAST}`);
       });
 
       it('Should move backward four times with commands BBBB', () => {
-        rover.excuteCommands('BBBB');
-        expect(position.getRoverPosition()).to.equal(`(0,2) ${RoverHeadings.EAST}`);
+        expect(rover.excuteCommands('BBBB')).to.equal(`(0,2) ${RoverHeadings.EAST}`);
       });
 
       it('Should rotate right, and heading becomes at SOUTH', () => {
-        rover.excuteCommands('R');
-        expect(position.getRoverPosition()).to.equal(`(4,2) ${RoverHeadings.SOUTH}`);
+        expect(rover.excuteCommands('R')).to.equal(`(4,2) ${RoverHeadings.SOUTH}`);
       });
 
       it('Should rotate left, and heading becomes at NORTH', () => {
-        rover.excuteCommands('L');
-        expect(position.getRoverPosition()).to.equal(`(4,2) ${RoverHeadings.NORTH}`);
+        expect(rover.excuteCommands('L')).to.equal(`(4,2) ${RoverHeadings.NORTH}`);
       });
     });
 
@@ -77,23 +68,19 @@ describe('Rover with initial position is (4, 2) NORTH', () => {
       });
 
       it('Should move forward four times with commands FFFF', () => {
-        rover.excuteCommands('FFFF');
-        expect(position.getRoverPosition()).to.equal(`(4,-2) ${RoverHeadings.SOUTH}`);
+        expect(rover.excuteCommands('FFFF')).to.equal(`(4,-2) ${RoverHeadings.SOUTH}`);
       });
 
       it('Should move backward four times with commands BBBB', () => {
-        rover.excuteCommands('BBBB');
-        expect(position.getRoverPosition()).to.equal(`(4,6) ${RoverHeadings.SOUTH}`);
+        expect(rover.excuteCommands('BBBB')).to.equal(`(4,6) ${RoverHeadings.SOUTH}`);
       });
 
       it('Should rotate right, and heading becomes at WEAST', () => {
-        rover.excuteCommands('R');
-        expect(position.getRoverPosition()).to.equal(`(4,2) ${RoverHeadings.WEAST}`);
+        expect(rover.excuteCommands('R')).to.equal(`(4,2) ${RoverHeadings.WEAST}`);
       });
 
       it('Should rotate left, and heading becomes at EAST', () => {
-        rover.excuteCommands('L');
-        expect(position.getRoverPosition()).to.equal(`(4,2) ${RoverHeadings.EAST}`);
+        expect(rover.excuteCommands('L')).to.equal(`(4,2) ${RoverHeadings.EAST}`);
       });
     });
 
@@ -103,31 +90,26 @@ describe('Rover with initial position is (4, 2) NORTH', () => {
       });
 
       it('Should move forward four times with commands FFFF', () => {
-        rover.excuteCommands('FFFF');
-        expect(position.getRoverPosition()).to.equal(`(0,2) ${RoverHeadings.WEAST}`);
+        expect(rover.excuteCommands('FFFF')).to.equal(`(0,2) ${RoverHeadings.WEAST}`);
       });
 
       it('Should move backward four times with commands BBBB', () => {
-        rover.excuteCommands('BBBB');
-        expect(position.getRoverPosition()).to.equal(`(8,2) ${RoverHeadings.WEAST}`);
+        expect(rover.excuteCommands('BBBB')).to.equal(`(8,2) ${RoverHeadings.WEAST}`);
       });
 
       it('Should rotate right, and heading becomes at NORTH', () => {
-        rover.excuteCommands('R');
-        expect(position.getRoverPosition()).to.equal(`(4,2) ${RoverHeadings.NORTH}`);
+        expect(rover.excuteCommands('R')).to.equal(`(4,2) ${RoverHeadings.NORTH}`);
       });
 
       it('Should rotate left, and heading becomes at SOUTH', () => {
-        rover.excuteCommands('L');
-        expect(position.getRoverPosition()).to.equal(`(4,2) ${RoverHeadings.SOUTH}`);
+        expect(rover.excuteCommands('L')).to.equal(`(4,2) ${RoverHeadings.SOUTH}`);
       });
     });
 
     describe('Execute multiple commands', () => {
       it('Should execute command FLFFFRFLB', () => {
         position.heading = RoverHeadings.EAST;
-        rover.excuteCommands('FLFFFRFLB');
-        expect(position.getRoverPosition()).to.equal(`(6,4) ${RoverHeadings.NORTH}`);
+        expect(rover.excuteCommands('FLFFFRFLB')).to.equal(`(6,4) ${RoverHeadings.NORTH}`);
       });
     });
   });
@@ -135,8 +117,7 @@ describe('Rover with initial position is (4, 2) NORTH', () => {
   describe('When the rover enter a coordinate with an obstacle', () => {
     it('Rover should be stopped if report previous position', () => {
       rover.space.obstacles = [{ x: 4, y: 4 }];
-      rover.excuteCommands('FFFF');
-      expect(position.getRoverPosition()).to.equal(`(4,3) ${RoverHeadings.NORTH}`);
+      expect(rover.excuteCommands('FFFF')).to.equal(`(4,3) ${RoverHeadings.NORTH} STOPPED`);
     });
   });
 });
