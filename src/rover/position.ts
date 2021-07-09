@@ -15,9 +15,13 @@ export const HEADING_AVAILABLE_COMMANDS: { [key: string]: Commands } = {
     F: (position: Position) => {
       position.y++;
     },
+    B: (position: Position) => {
+      position.y--;
+    },
   },
 };
 
 export interface Commands {
   F: (position: Position) => void;
+  B: (position: Position) => void;
 }
