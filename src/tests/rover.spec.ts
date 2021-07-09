@@ -1,4 +1,4 @@
-import { assert, expect } from 'chai';
+import { expect } from 'chai';
 import { Position, RoverHeadings } from '../rover/position';
 import { Rover } from '../rover/rover';
 
@@ -129,6 +129,14 @@ describe('Rover with initial position is (4, 2) NORTH', () => {
         rover.excuteCommands('FLFFFRFLB');
         expect(position.getRoverPosition()).to.equal(`(6,4) ${RoverHeadings.NORTH}`);
       });
+    });
+  });
+
+  describe('When the rover enter a coordinate with an obstacle', () => {
+    it('Rover should be stopped if report previous position', () => {
+      rover.space.obstacles = [{ x: 4, y: 4 }];
+      rover.excuteCommands('FFFF');
+      expect(position.getRoverPosition()).to.equal(`(4,3) ${RoverHeadings.NORTH}`);
     });
   });
 });
