@@ -33,4 +33,11 @@ describe('Rover with initial position is (4, 2) NORTH', () => {
       expect(result).to.equal('(3,2) WEAST');
     });
   });
+
+  describe('Get Rover Position', () => {
+    it('Get rover coordinates and direction', () => {
+      const position = rover.getRoverPosition();
+      expect(position).to.equal('(4,2) NORTH');
+    });
+  });
 });

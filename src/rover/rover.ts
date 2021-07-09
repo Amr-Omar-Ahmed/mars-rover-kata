@@ -20,4 +20,8 @@ export class Rover {
       return '(3,2) WEAST';
     }
   }
+
+  getRoverPosition() {
+    throw new Error('Method not implemented.');
+  }
 }
