@@ -4,7 +4,7 @@ import { Space } from './space';
 export class Rover {
   space: Space = new Space();
 
-  excuteCommands(commands: string) {
+  excuteCommands(commands: string): string {
     let isRoverCanBeDamaged = false;
     commands.split('').forEach((command: 'F' | 'R' | 'L' | 'B') => {
       if (isRoverCanBeDamaged) {
@@ -22,5 +22,6 @@ export class Rover {
         this.space.position.y = prevY;
       }
     });
+    return `${this.space.position.getRoverPosition()}${isRoverCanBeDamaged ? ' STOPPED' : ''}`;
   }
 }
