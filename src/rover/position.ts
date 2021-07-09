@@ -19,6 +19,9 @@ export const HEADING_AVAILABLE_COMMANDS: { [key: string]: Commands } = {
     R: (position: Position) => {
       position.heading = RoverHeadings.EAST;
     },
+    L: (position: Position) => {
+      position.heading = RoverHeadings.WEAST;
+    },
   },
 };
 
@@ -26,6 +29,7 @@ export interface Commands {
   F: (position: Position) => void;
   B: (position: Position) => void;
   R: (position: Position) => void;
+  L: (position: Position) => void;
 }
 
 export enum RoverHeadings {
