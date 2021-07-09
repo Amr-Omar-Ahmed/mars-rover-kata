@@ -21,7 +21,7 @@ export class Rover {
     }
   }
 
-  getRoverPosition() {
-    throw new Error('Method not implemented.');
+  getRoverPosition(): string {
+    return `(${this.coordinates.x},${this.coordinates.y}) ${this.direction}`;
   }
 }
