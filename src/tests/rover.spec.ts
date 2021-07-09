@@ -121,5 +121,13 @@ describe('Rover with initial position is (4, 2) NORTH', () => {
         expect(rover.position.getRoverPosition()).to.equal(`(4,2) ${RoverHeadings.SOUTH}`);
       });
     });
+
+    describe('Execute multiple commands', () => {
+      it('Should execute command FLFFFRFLB', () => {
+        rover.position.heading = RoverHeadings.EAST;
+        rover.excuteCommands('FLFFFRFLB');
+        expect(rover.position.getRoverPosition()).to.equal(`(6,4) ${RoverHeadings.NORTH}`);
+      });
+    });
   });
 });
