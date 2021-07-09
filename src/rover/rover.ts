@@ -22,7 +22,9 @@ export class Rover {
   }
 
   excuteCommands(commands: string) {
-    throw new Error('Method not implemented.');
+    commands.split('').forEach((command) => {
+      this.moveForward();
+    });
   }
 
   getRoverPosition(): string {
