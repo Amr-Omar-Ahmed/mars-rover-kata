@@ -1,5 +1,6 @@
 import { expect } from 'chai';
-import { Position, RoverHeadings } from '../rover/position';
+import { RoverHeadings } from '../models/rover-headings.enum';
+import { Position } from '../rover/position';
 import { Rover } from '../rover/rover';
 
 describe('Rover with initial position is (4, 2) NORTH', () => {

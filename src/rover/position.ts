@@ -1,9 +1,5 @@
-export enum RoverHeadings {
-  'NORTH' = 'NORTH',
-  'EAST' = 'EAST',
-  'SOUTH' = 'SOUTH',
-  'WEAST' = 'WEAST',
-}
+import { RoverHeadings } from '../models/rover-headings.enum';
+
 export class Position {
   constructor(public x: number, public y: number) {
     this.x = x;
