@@ -5,8 +5,10 @@ export enum RoverHeadings {
   'WEAST' = 'WEAST',
 }
 export class Position {
-  x = 4;
-  y = 2;
+  constructor(public x: number, public y: number) {
+    this.x = x;
+    this.y = y;
+  }
   heading: RoverHeadings = RoverHeadings.NORTH;
 
   getRoverPosition(): string {
@@ -72,7 +74,6 @@ export const HEADING_AVAILABLE_COMMANDS: { [key: string]: Commands } = {
     },
   },
 };
-
 export interface Commands {
   F: (position: Position) => void;
   B: (position: Position) => void;
