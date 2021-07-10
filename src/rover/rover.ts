@@ -1,4 +1,4 @@
-import { HEADING_AVAILABLE_COMMANDS } from './position';
+import { Position } from './position';
 import { Space } from './space';
 
 export class Rover {
@@ -6,16 +6,16 @@ export class Rover {
 
   excuteCommands(commands: string): string {
     let isRoverCanBeDamaged = false;
-
+    let position: Position;
     commands.split('').forEach((command: 'F' | 'R' | 'L' | 'B') => {
       if (isRoverCanBeDamaged) {
         return;
       }
-      const position = this.space.position;
+      position = this.space.position;
       const prevX = position.x;
       const prevY = position.y;
       const currentHeading = position.heading;
-      HEADING_AVAILABLE_COMMANDS[currentHeading][command](position);
+      position.availableHeadingCommands[currentHeading][command](position);
       isRoverCanBeDamaged = this.space.obstacles.some(
         (obs) => obs.x === position.x && obs.y === position.y
       );
