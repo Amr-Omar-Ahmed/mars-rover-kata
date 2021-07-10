@@ -1,3 +1,4 @@
+import { Commands } from '../models/commands.interface';
 import { RoverHeadings } from '../models/rover-headings.enum';
 
 export class Position {
@@ -70,9 +71,3 @@ export const HEADING_AVAILABLE_COMMANDS: { [key: string]: Commands } = {
     },
   },
 };
-export interface Commands {
-  F: (position: Position) => void;
-  B: (position: Position) => void;
-  R: (position: Position) => void;
-  L: (position: Position) => void;
-}
